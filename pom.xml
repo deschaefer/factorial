@@ -92,8 +92,8 @@
 					</execution>
 				</executions>
 				<configuration>
-					<repository>des_local_repo</repository>
-					<tag>1.1</tag>
+					<repository>ifactorial</repository>
+					<tag>0.5</tag>
 					<buildArgs>
 						<JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
 					</buildArgs>
