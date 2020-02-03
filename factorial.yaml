@@ -1,0 +1,63 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: kubernetes-bootcamp
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/kubernetes-bootcamp
+  uid: bf6ffc80-a3d6-40b3-8832-5594833bd5ad
+  resourceVersion: '260081'
+  generation: 1
+  creationTimestamp: '2020-02-03T03:56:15Z'
+  labels:
+    app: kubernetes-bootcamp
+  annotations:
+    deployment.kubernetes.io/revision: '1'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubernetes-bootcamp
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: kubernetes-bootcamp
+    spec:
+      containers:
+        - name: kubernetes-bootcamp
+          image: 'gcr.io/google-samples/kubernetes-bootcamp:v1'
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+status:
+  observedGeneration: 1
+  replicas: 1
+  updatedReplicas: 1
+  readyReplicas: 1
+  availableReplicas: 1
+  conditions:
+    - type: Available
+      status: 'True'
+      lastUpdateTime: '2020-02-03T03:56:43Z'
+      lastTransitionTime: '2020-02-03T03:56:43Z'
+      reason: MinimumReplicasAvailable
+      message: Deployment has minimum availability.
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2020-02-03T03:56:43Z'
+      lastTransitionTime: '2020-02-03T03:56:15Z'
+      reason: NewReplicaSetAvailable
+      message: ReplicaSet "kubernetes-bootcamp-69fbc6f4cf" has successfully progressed.
