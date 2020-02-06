@@ -1,7 +1,7 @@
 # factorial
 
 # creates simple docker to run application
-docker run -p 8080:8080 ifactorial:1.1
+docker run -p 8080:8080 ifactorial:0.5
 
 http://localhost:8080/swagger-ui.html
 
