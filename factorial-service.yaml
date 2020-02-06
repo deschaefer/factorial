@@ -6,7 +6,7 @@ metadata:
     run: ifactorial
 spec:
   ports:
-    - port: 8080
+    - port: 9090
       protocol: TCP
   selector:
     run: ifactorial
