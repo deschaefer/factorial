@@ -14,3 +14,5 @@ http://localhost:8080/swagger-ui.html
 * kubectl get pods -l run=ifactorial -o yaml | grep podIP
 * kubectl apply -f factorial-service.yaml
 * kubectl get svc ifactorial
+
+* moved port to 9090 - see application properties
